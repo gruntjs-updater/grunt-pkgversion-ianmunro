@@ -11,10 +11,7 @@
 module.exports = function(grunt) {
     grunt.registerMultiTask('version', 'Add build number to the package.json', function() {
         var pkg = JSON.parse(grunt.file.read('./package.json'));
-        var version = pkg.version.split('.');
-        version[2] = this.data.buildNumber;
-
-        pkg.version = version.join('.');
+        pkg.version = this.options().buildNumber;
 
         grunt.file.write('./dist/package.json', JSON.stringify(pkg, null, 2));
     });
