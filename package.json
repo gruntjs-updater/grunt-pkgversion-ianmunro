@@ -1,7 +1,7 @@
 {
   "name": "grunt-pkgversion-ianmunro",
   "description": "Grunt task to automate build numbers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/Mudhoax/grunt-pkgversion-ianmunro",
   "author": {
     "name": "Ian Munro",

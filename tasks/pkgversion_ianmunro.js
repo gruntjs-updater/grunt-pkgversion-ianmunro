@@ -10,15 +10,13 @@
 
 module.exports = function(grunt) {
 
-  grunt.registerMultiTask('pkgversion_ianmunro', 'Grunt task to automate build numbers', function() {
-      grunt.registerMultiTask('version', 'Add build number to the package.json', function() {
-          var pkg = JSON.parse(grunt.file.read('./package.json'));
-          var version = pkg.version.split('.');
-          version[2] = this.data.buildNumber;
+  grunt.registerMultiTask('version', 'Grunt task to automate build numbers', function() {
+      var pkg = JSON.parse(grunt.file.read('./package.json'));
+      var version = pkg.version.split('.');
+      version[2] = this.data.buildNumber;
 
-          pkg.version = version.join('.');
+      pkg.version = version.join('.');
 
-          grunt.file.write('./dist/package.json', JSON.stringify(pkg, null, 2));
-      });
+      grunt.file.write('./dist/package.json', JSON.stringify(pkg, null, 2));
   });
 };
